@@ -1,2 +1,0 @@
-# Individual_project
- 
