@@ -146,5 +146,9 @@ def profile():
     conn.close()
     return render_template('profile.html', score=int(accept_task1 * 100 / max(all_task1, 1)))
 
+@app.route('/teoriy')
+def teoriy():
+    return render_template('teoriy.html')
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    app.run()
