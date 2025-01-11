@@ -59,11 +59,11 @@
 </head>
 <body>
     <div class="container">
-        <h1>Рэйтинг</h1>
+        <h1>Рейтинг</h1>
         <a href="{{ url_for('home') }}" class="back-link">Главная</a>
         <br>
         {% for i in range(size) %}
-            <a>{{ i + 1 }}. {{ rat[i][1] }} - {{ rat[i][0] }}</a>
+            <a>{{ i + 1 }}. {{ rat[i][1] }} - {{ -rat[i][0] }}</a>
         {% endfor %}
     </div>
 </body>
