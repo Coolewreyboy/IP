@@ -2,20 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: green;
+            margin-bottom: 20px;
+        }
+        .result {
+            font-weight: bold;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .correct {
+            color: darkgreen;
+        }
+        .incorrect {
+            color: red;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007BFF;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-<h2>Очки: {{ score }}</h2>
-{% if wrong_answer %}
-    <a>Ошибки</a>
-    <br>
-    {% for (w, c) in wrong_answer %}
-        <a>{{ w }} - {{ c }}</a>
+    <div class="container">
+        <h1>Очки: {{ score }}</h1>
+        {% if status %}
+            {% for i in range(10) %}
+                <div class="result">
+                    {% if status[i] %}
+                        <span class="correct">{{ answer[i][1] }}</span> <span class="incorrect"> - {{ answer[i][0] }}</span>
+                    {% else %}
+                        <span class="correct">{{ answer[i][0] }} - {{ answer[i][1] }}</span>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% endif %}
+        <a href="{{ url_for('task1') }}">Продолжить</a>
         <br>
-    {% endfor %}
-{% endif %}
-<a href="{{ url_for('task1') }}"> Продолжить </a>
-<br>
-<a href="{{ url_for('home') }}"> Закончить</a>
+        <a href="{{ url_for('home') }}">Закончить</a>
+    </div>
 </body>
 </html>
