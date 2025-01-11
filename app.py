@@ -40,7 +40,7 @@ def login():
             return redirect(url_for('home'))
         elif check_username:
             return render_template('login.html', message='Неверный пароль')
-        else:
+        elif username:
             return render_template('login.html', message='Неверный логин')
     return render_template('login.html', message='')
 
@@ -117,7 +117,7 @@ def home():
 @app.route('/logout')
 def logout():
     session['username'] = None
-    return render_template('login.html')
+    return redirect(url_for('login'))
 
 @app.route('/profile')
 def profile():
