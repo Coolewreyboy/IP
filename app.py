@@ -1,3 +1,5 @@
+import random
+
 from flask import *
 from sqlite3 import *
 from random import *
@@ -13,12 +15,14 @@ def list_ans(s):
     for i in range(len(t)):
         if t[i] in a:
             result.append(t[0:i] + t[i].upper() + t[i + 1:])
+    shuffle(result)
     return result
 
 def clear_coockies():
     session['check_task'] = 0
     session['word_num'] = 0
     session['score'] = 0
+    session['wrong_answer'] = []
 @app.route('/')
 
 @app.route('/login', methods=['GET'])
@@ -58,8 +62,8 @@ def register():
 
         if len(result) == 0 and username:
             if password == password_again and username:
-                cursor.execute("""INSERT INTO Users(Username, Password, Points) VALUES(?, ?, ?)""",
-                               (username, password, 0))
+                cursor.execute("""INSERT INTO Users(Username, Password, all_task1, accept_task1) VALUES(?, ?, ?)""",
+                               (username, password, 0, 0))
                 conn.commit()
                 conn.close()
                 return redirect(url_for('login'))
@@ -96,17 +100,26 @@ def task1():
             session['list_ans'] = list_ans(session['list'][session['word_num']])
             return render_template('task1.html')
         else:
-            response = make_response(render_template('result.html'))
-            clear_coockies()
-            return response
+            return redirect(url_for('result'))
     return render_template('task1.html')
 
 
 @app.route('/result')
 def result():
-    response = make_response(render_template('result.html'))
+    username = session['username']
+    conn = connect('Individual_project.db')
+    cursor = conn.cursor()
+    result = cursor.execute("""SELECT accept_task1, all_task1 FROM Users WHERE Username = ?""", (username,)).fetchone()
+    accept_task1 = result[0]
+    all_task1 = result[1]
+    accept_task1 = accept_task1 + session['score']
+    all_task1 += 10
+    result = cursor.execute("""UPDATE Users SET accept_task1 = ?, all_task1 = ? WHERE Username = ?""", (accept_task1, all_task1, username)).fetchone()
+    conn.commit()
+    conn.close()
+    score = session['score']
     clear_coockies()
-    return response
+    return render_template('result.html', score=score)
 
 @app.route('/home')
 def home():
@@ -121,8 +134,17 @@ def logout():
 
 @app.route('/profile')
 def profile():
-    clear_coockies()
-    return render_template('profile.html')
+    conn = connect("Individual_project.db")
+    username = session['username']
+    conn = connect('Individual_project.db')
+    cursor = conn.cursor()
+    result = cursor.execute("""SELECT accept_task1, all_task1 FROM Users WHERE Username = ?""", (username,)).fetchone()
+    accept_task1 = result[0]
+    all_task1 = result[1]
+    print(accept_task1, all_task1)
+    conn.commit()
+    conn.close()
+    return render_template('profile.html', score=int(accept_task1 * 100 / max(all_task1, 1)))
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    app.run()
