@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Login </title>
+</head>
+<body>
+{% if message %}
+    <a>{{ message }}</a>
+{% endif %}
+<form action="" method="GET">
+    <label for="username">Username</label>
+    <input type="text" name="username" required>
+    <br>
+    <label for="password">Password</label>
+    <input type="password" name="password" required>
+    <br>
+    <input type="submit" value="login">
+</form>
+<a href={{ url_for('register') }}>register</a>
+</body>
+</html>
