@@ -3,20 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title> Login </title>
+    <style>
+        #message {
+            color: red;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .container {
+            width: 300px;
+            text-align: center;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-{% if message %}
-    <a>{{ message }}</a>
-{% endif %}
-<form action="" method="GET">
-    <label for="username">Username</label>
-    <input type="text" name="username" required>
-    <br>
-    <label for="password">Password</label>
-    <input type="password" name="password" required>
-    <br>
-    <input type="submit" value="login">
-</form>
-<a href={{ url_for('register') }}>register</a>
+    {% if message %}
+        <a id="message">{{ message }}</a>
+    {% endif %}
+    <div class="container">
+        <h2>Вход</h2>
+        <form action="" method="GET">
+            <label for="username">Username</label>
+            <br>
+            <input type="text" name="username" required>
+            <br>
+            <label for="password">Password</label>
+            <br>
+            <input type="password" name="password" required>
+            <br>
+            <input type="submit" value="Войти">
+        </form>
+        <a href={{ url_for('register') }}>Зарегистрироваться</a>
+    </div>
 </body>
 </html>
