@@ -30,6 +30,7 @@ def login():
         conn = connect('Individual_project.db')
         cursor = conn.cursor()
         result = cursor.execute("""SELECT * FROM Users WHERE Username = ? AND Password = ?""", (username, password)).fetchone()
+        check_username = bool(cursor.execute("""SELECT * FROM Users WHERE Username = ?""", (username,)).fetchone())
         conn.commit()
         conn.close()
 
@@ -37,7 +38,7 @@ def login():
             session['username'] = username
             session['check_task'] = 0
             return redirect(url_for('home'))
-        elif cursor.execute("""SELECT * FROM Users WHERE Username = ?""", (username,)).fetchone():
+        elif check_username:
             return render_template('login.html', message='Неверный пароль')
         else:
             return render_template('login.html', message='Неверный логин')
