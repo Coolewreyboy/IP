@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{{ session['username'] }}</title>
 </head>
 <body>
     <a href="{{ url_for('home') }}"> Главная</a>
@@ -10,6 +10,7 @@
     <a> {{ session['username'] }}</a>
     <br>
     <a> {{ score }} </a>
+    <br>
     <a href="{{ url_for('logout') }}">Выход</a>
 </body>
 </html>
