@@ -5,9 +5,17 @@
     <title>Result</title>
 </head>
 <body>
-<a>{{ score }}</a>
-<br>
+<h2>Очки: {{ score }}</h2>
+{% if wrong_answer %}
+    <a>Ошибки</a>
+    <br>
+    {% for (w, c) in wrong_answer %}
+        <a>{{ w }} - {{ c }}</a>
+        <br>
+    {% endfor %}
+{% endif %}
 <a href="{{ url_for('task1') }}"> Продолжить </a>
+<br>
 <a href="{{ url_for('home') }}"> Закончить</a>
 </body>
 </html>

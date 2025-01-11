@@ -95,6 +95,8 @@ def task1():
         word = session['list'][session['word_num']]
         if answer == word:
             session['score'] += 1
+        else:
+            session['wrong_answer'].append((word, answer))
         session['word_num'] += 1
         if session['word_num'] < 10:
             session['list_ans'] = list_ans(session['list'][session['word_num']])
@@ -118,8 +120,9 @@ def result():
     conn.commit()
     conn.close()
     score = session['score']
+    wrong_answer = session['wrong_answer']
     clear_coockies()
-    return render_template('result.html', score=score)
+    return render_template('result.html', score=score, wrong_answer=wrong_answer)
 
 @app.route('/home')
 def home():
@@ -151,4 +154,4 @@ def teoriy():
     return render_template('teoriy.html')
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=8080)
+    app.run()
