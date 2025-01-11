@@ -63,7 +63,7 @@ def register():
 
         if len(result) == 0 and username:
             if password == password_again and username:
-                cursor.execute("""INSERT INTO Users(Username, Password, all_task1, accept_task1) VALUES(?, ?, ?)""",
+                cursor.execute("""INSERT INTO Users(Username, Password, all_task1, accept_task1) VALUES(?, ?, ?, ?)""",
                                (username, password, 0, 0))
                 conn.commit()
                 conn.close()
@@ -157,4 +157,4 @@ def teoriy():
     return render_template('teoriy.html')
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=8080)
+    app.run()
