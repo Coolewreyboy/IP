@@ -116,4 +116,4 @@ def profile():
     return render_template('profile.html')
 
 if __name__ == '__main__':
-    app.run(host='90.156.229.168')
+    app.run(host='0.0.0.0', port=8080)
