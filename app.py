@@ -147,7 +147,6 @@ def profile():
     result = cursor.execute("""SELECT accept_task1, all_task1 FROM Users WHERE Username = ?""", (username,)).fetchone()
     accept_task1 = result[0]
     all_task1 = result[1]
-    print(accept_task1, all_task1)
     conn.commit()
     conn.close()
     return render_template('profile.html', score=int(accept_task1 * 100 / max(all_task1, 1)))
@@ -156,5 +155,16 @@ def profile():
 def teoriy():
     return render_template('teoriy.html')
 
+@app.route('/trophy')
+def trophy():
+    conn = connect("Individual_project.db")
+    cursor = conn.cursor()
+    result = cursor.execute("""SELECT accept_task1, all_task1, Username FROM Users """).fetchall()
+    a = []
+    for (ac, al, us) in result:
+        a.append((int(ac * 100/ max(1, al)), us))
+    a.sort()
+    return render_template('trophy.html', rat=a, size=len(a))
+
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=8080)
+    app.run()
