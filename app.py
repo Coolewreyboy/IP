@@ -167,4 +167,4 @@ def trophy():
     return render_template('trophy.html', rat=a, size=len(a))
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0", port=8080)
