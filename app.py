@@ -162,7 +162,7 @@ def trophy():
     result = cursor.execute("""SELECT accept_task1, all_task1, Username FROM Users """).fetchall()
     a = []
     for (ac, al, us) in result:
-        a.append((int(ac * 100/ max(1, al)), us))
+        a.append((-int(ac * 100/ max(1, al)), us))
     a.sort()
     return render_template('trophy.html', rat=a, size=len(a))
 
