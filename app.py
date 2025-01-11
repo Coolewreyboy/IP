@@ -74,16 +74,16 @@ def task1():
     if not session['check_task']:
         conn = connect('Individual_project.db')
         cursor = conn.cursor()
-        list = []
-        for i in range(10):
-            list.append(cursor.execute("""SELECT word FROM words_task_1 WHERE ID = ?""", (randint(0, 222),)).fetchone()[0])
+        l = set()
+        while len(l) != 10:
+            l.add(cursor.execute("""SELECT word FROM words_task_1 WHERE ID = ?""", (randint(0, 222),)).fetchone()[0].replace('Ё', 'Е'))
         conn.close()
-
+        l = list(l)
         session['check_task'] = 1
         session['word_num'] = 0
         session['score'] = 0
-        session['list'] = list
-        session['list_ans'] = list_ans(list[0])
+        session['list'] = l
+        session['list_ans'] = list_ans(l[0])
         return render_template('task1.html')
     elif request.method == 'GET' and request.args.get('answer'):
         answer = request.args.get('answer')
