@@ -33,12 +33,14 @@ def login():
         conn.commit()
         conn.close()
 
-        if result:
+        if result and username:
             session['username'] = username
             session['check_task'] = 0
             return redirect(url_for('home'))
-        elif username:
+        elif cursor.execute("""SELECT * FROM Users WHERE Username = ?""", (username,)).fetchone():
             return render_template('login.html', message='Неверный пароль')
+        else:
+            return render_template('login.html', message='Неверный логин')
     return render_template('login.html', message='')
 
 
@@ -52,8 +54,6 @@ def register():
         conn = connect('Individual_project.db')
         cursor = conn.cursor()
         result = cursor.execute("""SELECT * FROM Users WHERE Username = ?""", (username,)).fetchall()
-
-        response = make_response(render_template('register.html'))
 
         if len(result) == 0 and username:
             if password == password_again and username:
@@ -111,6 +111,12 @@ def result():
 def home():
     clear_coockies()
     return render_template('home.html')
+
+
+@app.route('/logout')
+def logout():
+    session['username'] = None
+    return render_template('login.html')
 
 @app.route('/profile')
 def profile():
