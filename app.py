@@ -147,4 +147,4 @@ def profile():
     return render_template('profile.html', score=int(accept_task1 * 100 / max(all_task1, 1)))
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', post=8080)
+    app.run(host='0.0.0.0', port=8080)
