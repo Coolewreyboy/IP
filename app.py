@@ -72,7 +72,6 @@ def register():
 @app.route('/task1', methods=['GET'])
 def task1():
     if not session['check_task']:
-        clear_coockies()
         conn = connect('Individual_project.db')
         cursor = conn.cursor()
         list = []
@@ -96,13 +95,17 @@ def task1():
             session['list_ans'] = list_ans(session['list'][session['word_num']])
             return render_template('task1.html')
         else:
-            return render_template('result.html')
+            response = make_response(render_template('result.html'))
+            clear_coockies()
+            return response
     return render_template('task1.html')
 
 
 @app.route('/result')
 def result():
-    return render_template('result.html')
+    response = make_response(render_template('result.html'))
+    clear_coockies()
+    return response
 
 @app.route('/home')
 def home():
