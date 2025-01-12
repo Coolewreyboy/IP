@@ -41,7 +41,7 @@ def login():
 
         if result and username:
             session['username'] = username
-            session['check_task'] = 0
+            clear_coockies()
             return redirect(url_for('home'))
         elif check_username:
             return render_template('login.html', message='Неверный пароль')
@@ -77,6 +77,8 @@ def register():
 
 @app.route('/task1', methods=['GET'])
 def task1():
+    if not session['username']:
+        return redirect(url_for('login'))
     if not session['check_task']:
         conn = connect('Individual_project.db')
         cursor = conn.cursor()
@@ -110,6 +112,8 @@ def task1():
 
 @app.route('/result')
 def result():
+    if not session['username']:
+        return redirect(url_for('login'))
     username = session['username']
     conn = connect('Individual_project.db')
     cursor = conn.cursor()
@@ -129,17 +133,23 @@ def result():
 
 @app.route('/home')
 def home():
+    if not session['username']:
+        return redirect(url_for('login'))
     clear_coockies()
     return render_template('home.html')
 
 
 @app.route('/logout')
 def logout():
+    if not session['username']:
+        return redirect(url_for('login'))
     session['username'] = None
     return redirect(url_for('login'))
 
 @app.route('/profile')
 def profile():
+    if not session['username']:
+        return redirect(url_for('login'))
     conn = connect("Individual_project.db")
     username = session['username']
     conn = connect('Individual_project.db')
@@ -153,10 +163,14 @@ def profile():
 
 @app.route('/teoriy')
 def teoriy():
+    if not session['username']:
+        return redirect(url_for('login'))
     return render_template('teoriy.html')
 
 @app.route('/trophy')
 def trophy():
+    if not session['username']:
+        return redirect(url_for('login'))
     conn = connect("Individual_project.db")
     cursor = conn.cursor()
     result = cursor.execute("""SELECT accept_task1, all_task1, Username FROM Users """).fetchall()
