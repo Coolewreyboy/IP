@@ -68,7 +68,7 @@ def register():
                 conn.commit()
                 conn.close()
                 return redirect(url_for('login'))
-            return render_template('register.html', message='Несовпадают пароли')
+            return render_template('register.html', message='Не совпадают пароли')
         elif username:
             conn.close()
             return render_template('register.html', message='Имя пользователя занято')
