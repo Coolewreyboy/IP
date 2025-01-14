@@ -24,6 +24,8 @@ def clear_coockies():
     session['score'] = 0
     session['status'] = [0] * 10
     session['answer'] = [('', '')] * 10
+
+
 @app.route('/')
 
 @app.route('/login', methods=['GET'])
