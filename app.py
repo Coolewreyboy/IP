@@ -18,6 +18,7 @@ def list_ans(s):
     shuffle(result)
     return result
 
+
 def clear_coockies():
     session['check_task'] = 0
     session['word_num'] = 0
