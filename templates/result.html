@@ -64,14 +64,14 @@
 </head>
 <body>
     <div class="container">
-        <h1>Очки: {{ score }}</h1>
+            <h1>Очки: {{ score }}</h1>
         {% if status %}
             {% for i in range(10) %}
                 <div class="result {% if not status[i] %}correct{% else %}incorrect{% endif %}">
                     {% if not status[i] %}
                         <span>{{ answer[i][1] }}</span> <span>- {{ answer[i][0] }}</span>
                     {% else %}
-                        <span>{{ answer[i][0] }} - {{ answer[i][1] }}</span>
+                        <span>{{ answer[i][1] }} - {{ answer[i][0] }}</span>
                     {% endif %}
                 </div>
             {% endfor %}

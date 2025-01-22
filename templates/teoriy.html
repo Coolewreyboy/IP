@@ -13,6 +13,7 @@
             margin: 0;
             padding: 20px;
         }
+
         .container {
             background-color: #ffffff;
             border-radius: 8px;
@@ -21,17 +22,19 @@
             max-width: 600px;
             margin: 0 auto;
         }
+
         h1 {
             color: #008000;
             margin-bottom: 20px;
             font-size: 2.5em; /* Увеличенный размер заголовка */
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Тень для заголовка */
         }
+
         .word {
             display: block;
             margin: 10px 0;
             text-decoration: none;
-            color: #007BFF;
+            color: #007BFE;
             font-size: 1.5em; /* Размер шрифта для слов */
             transition: color 0.3s, transform 0.3s; /* Плавный эффект при наведении */
             padding: 5px; /* Отступы для слов */
@@ -39,250 +42,266 @@
             background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для слов */
         }
-        .word:hover {
+
+        a {
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+            color: black; /* Цвет ссылок */
+            transition: color 0.3s, transform 0.3s; /* Плавный эффект при наведении */
+            font-size: 25px;
+            padding: 10px; /* Отступы для ссылок */
+            border-radius: 5px; /* Закругленные углы */
+            background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для ссылок */
+        }
+
+        a:hover {
             color: #0056b3; /* Более темный цвет при наведении */
-            transform: scale(1.05); /* Увеличение слова при наведении */
+            transform: scale(1.05); /* Увеличение ссылки при наведении */
             background-color: rgba(255, 255, 255, 1); /* Полный белый фон при наведении */
         }
+
         .back-link {
-            margin-bottom: 30px;
+            margin-top: 20px;
             font-weight: bold;
             text-decoration: none;
-            color: #007BFF;
+            color: #008000; /* Цвет ссылки "Назад" */
             transition: color 0.3s;
         }
+
         .back-link:hover {
-            color: #0056b3;
+            color: #005000; /* Более темный цвет при наведении */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Ударения</h1>
-        <div class="word">аэропОрты</div>
-        <div class="word">бАнты</div>
-        <div class="word">бОроду</div>
-        <div class="word">бухгАлтеров</div>
-        <div class="word">вероисповЕдание</div>
-        <div class="word">водопровОд</div>
-        <div class="word">газопровОд</div>
-        <div class="word">граждАнство</div>
-        <div class="word">дефИс</div>
-        <div class="word">дешевИзна</div>
-        <div class="word">диспансЕр</div>
-        <div class="word">договорЁнность</div>
-        <div class="word">докумЕнт</div>
-        <div class="word">досУг</div>
-        <div class="word">еретИк</div>
-        <div class="word">жалюзИ</div>
-        <div class="word">знАчимость</div>
-        <div class="word">Иксы</div>
-        <div class="word">каталОг</div>
-        <div class="word">квартАл</div>
-        <div class="word">киломЕтр</div>
-        <div class="word">кОнусов</div>
-        <div class="word">кОнус</div>
-        <div class="word">корЫсть</div>
-        <div class="word">крАны</div>
-        <div class="word">кремЕнь</div>
-        <div class="word">кремнЯ</div>
-        <div class="word">лЕктор</div>
-        <div class="word">лОктя</div>
-        <div class="word">локтЕй</div>
-        <div class="word">лыжнЯ</div>
-        <div class="word">мЕстностей</div>
-        <div class="word">мЕстность</div>
-        <div class="word">намЕрение</div>
-        <div class="word">нарОст</div>
-        <div class="word">нЕдруг</div>
-        <div class="word">недУг</div>
-        <div class="word">некролОг</div>
-        <div class="word">нЕнависть</div>
-        <div class="word">нефтепровОд</div>
-        <div class="word">новостЕй</div>
-        <div class="word">нОвость</div>
-        <div class="word">нОгтя</div>
-        <div class="word">ногтЕй</div>
-        <div class="word">Отзыв</div>
-        <div class="word">отзЫв</div>
-        <div class="word">отозвАть</div>
-        <div class="word">Отрочество</div>
-        <div class="word">партЕр</div>
-        <div class="word">портфЕль</div>
-        <div class="word">пОручни</div>
-        <div class="word">придАное</div>
-        <div class="word">призЫв</div>
-        <div class="word">свЁкла</div>
-        <div class="word">сирОты</div>
-        <div class="word">сиротА</div>
-        <div class="word">созЫв</div>
-        <div class="word">сосредотОчение</div>
-        <div class="word">срЕдства</div>
-        <div class="word">срЕдство</div>
-        <div class="word">стАтуя</div>
-        <div class="word">столЯр</div>
-        <div class="word">тамОжня</div>
-        <div class="word">тОрты</div>
-        <div class="word">тУфля</div>
-        <div class="word">цемЕнт</div>
-        <div class="word">цЕнтнер</div>
-        <div class="word">цепОчка</div>
-        <div class="word">шАрфы</div>
-        <div class="word">шофЁр</div>
-        <div class="word">экспЕрт</div>
-        <div class="word">вернА</div>
-        <div class="word">вЕрный</div>
-        <div class="word">знАчимый</div>
-        <div class="word">красИвее</div>
-        <div class="word">красИвый</div>
-        <div class="word">красИвейший</div>
-        <div class="word">кУхонный</div>
-        <div class="word">ловкА</div>
-        <div class="word">лОвкий</div>
-        <div class="word">мозаИчный</div>
-        <div class="word">оптОвый</div>
-        <div class="word">прозорлИвы</div>
-        <div class="word">прозорлИва</div>
-        <div class="word">слИвовый</div>
-        <div class="word">бралА</div>
-        <div class="word">бралАсь</div>
-        <div class="word">брАться</div>
-        <div class="word">взялА</div>
-        <div class="word">взялАсь</div>
-        <div class="word">взЯться</div>
-        <div class="word">влилАсь</div>
-        <div class="word">влИться</div>
-        <div class="word">ворвалАсь</div>
-        <div class="word">ворвАться</div>
-        <div class="word">воспринЯть</div>
-        <div class="word">воспринялА</div>
-        <div class="word">воссоздалА</div>
-        <div class="word">воссоздАть</div>
-        <div class="word">вручИт</div>
-        <div class="word">вручИть</div>
-        <div class="word">гналА</div>
-        <div class="word">гнАться</div>
-        <div class="word">добралА</div>
-        <div class="word">добралАсь</div>
-        <div class="word">дождалАсь</div>
-        <div class="word">дозвонИтся</div>
-        <div class="word">дозИровать</div>
-        <div class="word">ждалА</div>
-        <div class="word">жилОсь</div>
-        <div class="word">закУпорить</div>
-        <div class="word">занЯть</div>
-        <div class="word">заперлА</div>
-        <div class="word">запломбировАть</div>
-        <div class="word">защемИт</div>
-        <div class="word">звалА</div>
-        <div class="word">звонИт</div>
-        <div class="word">кАшлянуть</div>
-        <div class="word">клАла</div>
-        <div class="word">клЕить</div>
-        <div class="word">крАлась</div>
-        <div class="word">кровоточИть</div>
-        <div class="word">лгалА</div>
-        <div class="word">лилА</div>
-        <div class="word">лилАсь</div>
-        <div class="word">навралА</div>
-        <div class="word">наделИт</div>
-        <div class="word">надорвалАсь</div>
-        <div class="word">назвалАсь</div>
-        <div class="word">накренИтся</div>
-        <div class="word">налилА</div>
-        <div class="word">нарвалА</div>
-        <div class="word">начАть</div>
-        <div class="word">обзвонИт</div>
-        <div class="word">облегчИть</div>
-        <div class="word">облилАсь</div>
-        <div class="word">обнялАсь</div>
-        <div class="word">обогналА</div>
-        <div class="word">ободралА</div>
-        <div class="word">ободрИть</div>
-        <div class="word">ободрИться</div>
-        <div class="word">обострИть</div>
-        <div class="word">одолжИть</div>
-        <div class="word">озлОбить</div>
-        <div class="word">оклЕить</div>
-        <div class="word">окружИт</div>
-        <div class="word">опОшлить</div>
-        <div class="word">освЕдомиться</div>
-        <div class="word">отбылА</div>
-        <div class="word">отдалА</div>
-        <div class="word">откУпорить</div>
-        <div class="word">отозвалА</div>
-        <div class="word">отозвалАсь</div>
-        <div class="word">перезвонИт</div>
-        <div class="word">перелилА</div>
-        <div class="word">плодоносИть</div>
-        <div class="word">пломбировАть</div>
-        <div class="word">повторИт</div>
-        <div class="word">позвалА</div>
-        <div class="word">позвонИт</div>
-        <div class="word">полилА</div>
-        <div class="word">положИть</div>
-        <div class="word">понЯть</div>
-        <div class="word">послАла</div>
-        <div class="word">прибЫть</div>
-        <div class="word">принЯть</div>
-        <div class="word">рвалА</div>
-        <div class="word">сверлИт</div>
-        <div class="word">снялА</div>
-        <div class="word">совралА</div>
-        <div class="word">создалА</div>
-        <div class="word">сорвалА</div>
-        <div class="word">сорИт</div>
-        <div class="word">убралА</div>
-        <div class="word">углубИть</div>
-        <div class="word">укрепИт</div>
-        <div class="word">чЕрпать</div>
-        <div class="word">щемИт</div>
-        <div class="word">щЁлкать</div>
-        <div class="word">довезЁнный</div>
-        <div class="word">зАгнутый</div>
-        <div class="word">зАнятый</div>
-        <div class="word">зАпертый</div>
-        <div class="word">заселЁнный</div>
-        <div class="word">кормЯщий</div>
-        <div class="word">кровоточАщий</div>
-        <div class="word">нажИвший</div>
-        <div class="word">налИвший</div>
-        <div class="word">нанЯвшийся</div>
-        <div class="word">начАвший</div>
-        <div class="word">нАчатый</div>
-        <div class="word">низведЁнный</div>
-        <div class="word">облегчЁнный</div>
-        <div class="word">ободрЁнный</div>
-        <div class="word">обострЁнный</div>
-        <div class="word">отключЁнный</div>
-        <div class="word">повторЁнный</div>
-        <div class="word">поделЁнный</div>
-        <div class="word">понЯвший</div>
-        <div class="word">прИнятый</div>
-        <div class="word">приручЁнный</div>
-        <div class="word">прожИвший</div>
-        <div class="word">снятА</div>
-        <div class="word">сОгнутый</div>
-        <div class="word">углублЁнный</div>
-        <div class="word">закУпорив</div>
-        <div class="word">начАв</div>
-        <div class="word">начАвшись</div>
-        <div class="word">отдАв</div>
-        <div class="word">поднЯв</div>
-        <div class="word">понЯв</div>
-        <div class="word">прибЫв</div>
-        <div class="word">создАв</div>
-        <div class="word">вОвремя</div>
-        <div class="word">дОверху</div>
-        <div class="word">донЕльзя</div>
-        <div class="word">дОнизу</div>
-        <div class="word">дОсуха</div>
-        <div class="word">зАсветло</div>
-        <div class="word">зАтемно</div>
-        <div class="word">красИвее</div>
-        <div class="word">надОлго</div>
-        <div class="word">ненадОлго</div>
-        <a class="back-link" href="{{ url_for('home') }}">Главная</a>
-    </div>
+<div class="container">
+    <h1>Ударения</h1>
+    <a href="{{ url_for('home') }}" class="back-link">Главная</a>
+    <div class="word">аэропОрты</div>
+    <div class="word">бАнты</div>
+    <div class="word">бОроду</div>
+    <div class="word">бралА</div>
+    <div class="word">бралАсь</div>
+    <div class="word">брАться</div>
+    <div class="word">бухгАлтеров</div>
+    <div class="word">вернА</div>
+    <div class="word">вЕрный</div>
+    <div class="word">вероисповЕдание</div>
+    <div class="word">взялА</div>
+    <div class="word">взялАсь</div>
+    <div class="word">взЯться</div>
+    <div class="word">влилАсь</div>
+    <div class="word">влИться</div>
+    <div class="word">вОвремя</div>
+    <div class="word">водопровОд</div>
+    <div class="word">ворвалАсь</div>
+    <div class="word">ворвАться</div>
+    <div class="word">воспринялА</div>
+    <div class="word">воспринЯть</div>
+    <div class="word">воссоздалА</div>
+    <div class="word">воссоздАть</div>
+    <div class="word">вручИт</div>
+    <div class="word">вручИть</div>
+    <div class="word">газопровОд</div>
+    <div class="word">гналА</div>
+    <div class="word">гнАться</div>
+    <div class="word">граждАнство</div>
+    <div class="word">дефИс</div>
+    <div class="word">дешевИзна</div>
+    <div class="word">диспансЕр</div>
+    <div class="word">добралА</div>
+    <div class="word">добралАсь</div>
+    <div class="word">довезЁнный</div>
+    <div class="word">дОверху</div>
+    <div class="word">договорЁнность</div>
+    <div class="word">дождалАсь</div>
+    <div class="word">дозвонИтся</div>
+    <div class="word">дозИровать</div>
+    <div class="word">докумЕнт</div>
+    <div class="word">донЕльзя</div>
+    <div class="word">дОнизу</div>
+    <div class="word">досУг</div>
+    <div class="word">дОсуха</div>
+    <div class="word">еретИк</div>
+    <div class="word">жалюзИ</div>
+    <div class="word">ждалА</div>
+    <div class="word">жилОсь</div>
+    <div class="word">зАгнутый</div>
+    <div class="word">закУпорив</div>
+    <div class="word">закУпорить</div>
+    <div class="word">зАнятый</div>
+    <div class="word">занЯть</div>
+    <div class="word">заперлА</div>
+    <div class="word">зАпертый</div>
+    <div class="word">запломбировАть</div>
+    <div class="word">зАсветло</div>
+    <div class="word">заселЁнный</div>
+    <div class="word">зАтемно</div>
+    <div class="word">защемИт</div>
+    <div class="word">звалА</div>
+    <div class="word">звонИт</div>
+    <div class="word">знАчимость</div>
+    <div class="word">знАчимый</div>
+    <div class="word">Иксы</div>
+    <div class="word">каталОг</div>
+    <div class="word">кАшлянуть</div>
+    <div class="word">квартАл</div>
+    <div class="word">киломЕтр</div>
+    <div class="word">клАла</div>
+    <div class="word">клЕить</div>
+    <div class="word">кОнус</div>
+    <div class="word">кОнусов</div>
+    <div class="word">кормЯщий</div>
+    <div class="word">корЫсть</div>
+    <div class="word">крАлась</div>
+    <div class="word">крАны</div>
+    <div class="word">красИвее</div>
+    <div class="word">красИвее</div>
+    <div class="word">красИвейший</div>
+    <div class="word">красИвый</div>
+    <div class="word">кремЕнь</div>
+    <div class="word">кремнЯ</div>
+    <div class="word">кровоточАщий</div>
+    <div class="word">кровоточИть</div>
+    <div class="word">кУхонный</div>
+    <div class="word">лгалА</div>
+    <div class="word">лЕктор</div>
+    <div class="word">лилА</div>
+    <div class="word">лилАсь</div>
+    <div class="word">ловкА</div>
+    <div class="word">лОвкий</div>
+    <div class="word">локтЕй</div>
+    <div class="word">лОктя</div>
+    <div class="word">лыжнЯ</div>
+    <div class="word">мЕстностей</div>
+    <div class="word">мЕстность</div>
+    <div class="word">мозаИчный</div>
+    <div class="word">навралА</div>
+    <div class="word">наделИт</div>
+    <div class="word">надОлго</div>
+    <div class="word">надорвалАсь</div>
+    <div class="word">нажИвший</div>
+    <div class="word">назвалАсь</div>
+    <div class="word">накренИтся</div>
+    <div class="word">налИвший</div>
+    <div class="word">налилА</div>
+    <div class="word">намЕрение</div>
+    <div class="word">нанЯвшийся</div>
+    <div class="word">нарвалА</div>
+    <div class="word">нарОст</div>
+    <div class="word">начАв</div>
+    <div class="word">начАвший</div>
+    <div class="word">начАвшись</div>
+    <div class="word">нАчатый</div>
+    <div class="word">начАть</div>
+    <div class="word">нЕдруг</div>
+    <div class="word">недУг</div>
+    <div class="word">некролОг</div>
+    <div class="word">нЕнависть</div>
+    <div class="word">ненадОлго</div>
+    <div class="word">нефтепровОд</div>
+    <div class="word">низведЁнный</div>
+    <div class="word">новостЕй</div>
+    <div class="word">нОвость</div>
+    <div class="word">ногтЕй</div>
+    <div class="word">нОгтя</div>
+    <div class="word">обзвонИт</div>
+    <div class="word">облегчИть</div>
+    <div class="word">облегчЁнный</div>
+    <div class="word">облилАсь</div>
+    <div class="word">обнялАсь</div>
+    <div class="word">обогналА</div>
+    <div class="word">ободралА</div>
+    <div class="word">ободрИть</div>
+    <div class="word">ободрИться</div>
+    <div class="word">ободрЁнный</div>
+    <div class="word">обострИть</div>
+    <div class="word">обострЁнный</div>
+    <div class="word">одолжИть</div>
+    <div class="word">озлОбить</div>
+    <div class="word">оклЕить</div>
+    <div class="word">окружИт</div>
+    <div class="word">опОшлить</div>
+    <div class="word">оптОвый</div>
+    <div class="word">освЕдомиться</div>
+    <div class="word">отбылА</div>
+    <div class="word">отдАв</div>
+    <div class="word">отдалА</div>
+    <div class="word">Отзыв</div>
+    <div class="word">отзЫв</div>
+    <div class="word">отключЁнный</div>
+    <div class="word">откУпорить</div>
+    <div class="word">отозвалА</div>
+    <div class="word">отозвалАсь</div>
+    <div class="word">отозвАть</div>
+    <div class="word">Отрочество</div>
+    <div class="word">партЕр</div>
+    <div class="word">перезвонИт</div>
+    <div class="word">перелилА</div>
+    <div class="word">плодоносИть</div>
+    <div class="word">пломбировАть</div>
+    <div class="word">повторИт</div>
+    <div class="word">повторЁнный</div>
+    <div class="word">поделЁнный</div>
+    <div class="word">поднЯв</div>
+    <div class="word">позвалА</div>
+    <div class="word">позвонИт</div>
+    <div class="word">полилА</div>
+    <div class="word">положИть</div>
+    <div class="word">понЯв</div>
+    <div class="word">понЯвший</div>
+    <div class="word">понЯть</div>
+    <div class="word">портфЕль</div>
+    <div class="word">пОручни</div>
+    <div class="word">послАла</div>
+    <div class="word">прибЫв</div>
+    <div class="word">прибЫть</div>
+    <div class="word">придАное</div>
+    <div class="word">призЫв</div>
+    <div class="word">прИнятый</div>
+    <div class="word">принЯть</div>
+    <div class="word">приручЁнный</div>
+    <div class="word">прожИвший</div>
+    <div class="word">прозорлИва</div>
+    <div class="word">прозорлИвы</div>
+    <div class="word">рвалА</div>
+    <div class="word">сверлИт</div>
+    <div class="word">свЁкла</div>
+    <div class="word">сиротА</div>
+    <div class="word">сирОты</div>
+    <div class="word">слИвовый</div>
+    <div class="word">снялА</div>
+    <div class="word">снятА</div>
+    <div class="word">совралА</div>
+    <div class="word">сОгнутый</div>
+    <div class="word">создАв</div>
+    <div class="word">создалА</div>
+    <div class="word">созЫв</div>
+    <div class="word">сорвалА</div>
+    <div class="word">сорИт</div>
+    <div class="word">сосредотОчение</div>
+    <div class="word">срЕдства</div>
+    <div class="word">срЕдство</div>
+    <div class="word">стАтуя</div>
+    <div class="word">столЯр</div>
+    <div class="word">тамОжня</div>
+    <div class="word">тОрты</div>
+    <div class="word">тУфля</div>
+    <div class="word">убралА</div>
+    <div class="word">углубИть</div>
+    <div class="word">углублЁнный</div>
+    <div class="word">укрепИт</div>
+    <div class="word">цемЕнт</div>
+    <div class="word">цЕнтнер</div>
+    <div class="word">цепОчка</div>
+    <div class="word">чЕрпать</div>
+    <div class="word">шАрфы</div>
+    <div class="word">шофЁр</div>
+    <div class="word">щемИт</div>
+    <div class="word">щЁлкать</div>
+    <div class="word">экспЕрт</div>
+</div>
 </body>
 </html>

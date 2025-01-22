@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ударения</title>
+    <title> Тренажёр ударения</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -56,6 +56,11 @@
     </style>
 </head>
 <body>
+    <{% if score %}
+            <h1>Очки: {{ score }}</h1>
+        {% else %}
+            <h1>Очки: {{ 0 }}</h1>
+        {% endif %}
     <div class="container">
         <h1>Выберите ответ</h1>
         <form action="" method="GET">
