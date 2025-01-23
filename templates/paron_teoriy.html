@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Паронимы</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #008000;
+            margin-bottom: 20px;
+            font-size: 2.5em; /* Увеличенный размер заголовка */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Тень для заголовка */
+        }
+
+        .word {
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #007BFE;
+            font-size: 1.5em; /* Размер шрифта для слов */
+            transition: color 0.3s, transform 0.3s; /* Плавный эффект при наведении */
+            padding: 5px; /* Отступы для слов */
+            border-radius: 5px; /* Закругленные углы */
+            background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для слов */
+        }
+
+        a {
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+            color: black; /* Цвет ссылок */
+            transition: color 0.3s, transform 0.3s; /* Плавный эффект при наведении */
+            font-size: 25px;
+            padding: 10px; /* Отступы для ссылок */
+            border-radius: 5px; /* Закругленные углы */
+            background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для ссылок */
+        }
+
+        a:hover {
+            color: #0056b3; /* Более темный цвет при наведении */
+            transform: scale(1.05); /* Увеличение ссылки при наведении */
+            background-color: rgba(255, 255, 255, 1); /* Полный белый фон при наведении */
+        }
+
+        .back-link {
+            margin-top: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #008000; /* Цвет ссылки "Назад" */
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #005000; /* Более темный цвет при наведении */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Паронимы</h1>
+    <a href="{{ url_for('home') }}" class="back-link">Главная</a>
+    <div class="word">Абонемент - Абонент</div>
+    <div class="word">Артистический - Артистичный</div>
+    <div class="word">Бедный - Бедственный</div>
+    <div class="word">Безответный - Безответственный</div>
+    <div class="word">Болотистый - Болотный</div>
+    <div class="word">Благодарный - Благодарственный</div>
+    <div class="word">Благотворительный - Благотворный</div>
+    <div class="word">Бывший - Былой</div>
+    <div class="word">Вдох - Вздох</div>
+    <div class="word">Вековой - Вечный</div>
+    <div class="word">Великий - Величественный</div>
+    <div class="word">Восполнить - Дополнить - Заполнить - Наполнить - Переполнить - Пополнить</div>
+    <div class="word">Заполнен - Наполнен - Переполнен</div>
+    <div class="word">Враждебный - Вражеский</div>
+    <div class="word">Выбирать - Избирать</div>
+    <div class="word">Выбирая - Избирая</div>
+    <div class="word">Выгода - Выгодность</div>
+    <div class="word">Выдача - Отдача - Передача - Раздача</div>
+    <div class="word">Выплата - Оплата - Плата - Уплата</div>
+    <div class="word">Выплатить - Заплатить - Оплатить - Отплатить - Уплатить</div>
+    <div class="word">Вырастить - Нарастить - Отрастить</div>
+    <div class="word">Выращивание - Наращивание - Отращивание</div>
+    <div class="word">Высокий - Высотный</div>
+    <div class="word">Гарантийный - Гарантированный</div>
+    <div class="word">Гармонический - Гармоничный</div>
+    <div class="word">Глинистый - Глиняный</div>
+    <div class="word">Годичный - Годовалый - Годовой</div>
+    <div class="word">Гордость - Гордыня</div>
+    <div class="word">Гуманизм - Гуманность</div>
+    <div class="word">Гуманистический - Гуманитарный - Гуманный</div>
+    <div class="word">Двоичный - Двойной - Двойственный - Двоякий - Сдвоенный - Удвоенный</div>
+    <div class="word">Действенный - Действительный - Действующий</div>
+    <div class="word">Деловитый - Деловой - Дельный - Деляческий</div>
+    <div class="word">Демократичный - Демократический</div>
+    <div class="word">Диктант - Диктат</div>
+    <div class="word">Дипломант - Дипломат</div>
+    <div class="word">Дипломатический - Дипломатичный</div>
+    <div class="word">Длинный - Длительный</div>
+    <div class="word">Добротный - Добрый</div>
+    <div class="word">Доверительный - Доверчивый</div>
+    <div class="word">Дождевой - Дождливый</div>
+    <div class="word">Драматический - Драматичный</div>
+    <div class="word">Дружеский - Дружественный - Дружный</div>
+    <div class="word">Единичный - Единственный</div>
+    <div class="word">Желанный - Желательный</div>
+    <div class="word">Жестокий - Жёсткий</div>
+    <div class="word">Жизненный - Житейский</div>
+    <div class="word">Жилищный - Жилой</div>
+    <div class="word">Загородить - Огородить - Оградить - Отгородить - Перегородить</div>
+    <div class="word">Занизить - Понизить - Снизить</div>
+    <div class="word">Зачинатель - Зачинщик</div>
+    <div class="word">Звериный - Зверский</div>
+    <div class="word">Звуковой - Звучный</div>
+    <div class="word">Зрительный - Зрительский</div>
+    <div class="word">Изобретательный - Изобретательский</div>
+    <div class="word">Информативный - Информационный</div>
+    <div class="word">Информация - Информированность</div>
+    <div class="word">Иронический - Ироничный</div>
+    <div class="word">Искусный - Искусственный</div>
+    <div class="word">Исполнительный - Исполнительский</div>
+    <div class="word">Исходный - Исходящий</div>
+    <div class="word">Каменистый - Каменный</div>
+    <div class="word">Комфортабельный - Комфортный</div>
+    <div class="word">Конный - Конский</div>
+    <div class="word">Коренастый - Коренной - Корневой</div>
+    <div class="word">Костный - Костяной</div>
+    <div class="word">Красочный - Красящий - Крашеный</div>
+    <div class="word">Лакированный - Лаковый</div>
+    <div class="word">Ледовый - Ледяной</div>
+    <div class="word">Лесистый - Лесной</div>
+    <div class="word">Личностный - Личный</div>
+    <div class="word">Микроскопический - Микроскопичный</div>
+    <div class="word">Мороженый - Морозильный - Морозный</div>
+    <div class="word">Надеть - Одеть</div>
+    <div class="word">Наличие - Наличность</div>
+    <div class="word">Напоминание - Упоминание</div>
+    <div class="word">Невежа - Невежда</div>
+    <div class="word">Нестерпимый - Нетерпеливый - Нетерпимый</div>
+    <div class="word">Неудачный - Неудачливый</div>
+    <div class="word">Обвинённый - Обвинительный</div>
+    <div class="word">Обрывок - Отрывок</div>
+    <div class="word">Обхватить - Охватить</div>
+    <div class="word">Ограничить - Отграничить - Разграничить</div>
+    <div class="word">Оклик - Отклик</div>
+    <div class="word">Органический - Органичный</div>
+    <div class="word">Отборный - Отборочный</div>
+    <div class="word">Отклонение - Уклонение</div>
+    <div class="word">Отклониться - Уклониться</div>
+    <div class="word">Отличать - Различать</div>
+    <div class="word">Отличие - Различие</div>
+    <div class="word">Памятливый - Памятный</div>
+    <div class="word">Перетерпеть - Претерпеть</div>
+    <div class="word">Покупательный - Покупательский - Покупной</div>
+    <div class="word">Популистский - Популярный</div>
+    <div class="word">Почтенный - Почтительный - Почётный</div>
+    <div class="word">Практический - Практичный</div>
+    <div class="word">Предоставить - Представить</div>
+    <div class="word">Представительный - Представительский</div>
+    <div class="word">Признанный - Признательный</div>
+    <div class="word">Продуктивный - Продуктовый</div>
+    <div class="word">Производительность - Производство</div>
+    <div class="word">Производительный - Производственный</div>
+    <div class="word">Просветительский - Просвещённый</div>
+    <div class="word">Публицистический - Публицистичный</div>
+    <div class="word">Пугливый - Пуганый</div>
+    <div class="word">Раздражение - Раздражительность</div>
+    <div class="word">Ритмический - Ритмичный</div>
+    <div class="word">Романтический - Романтичный</div>
+    <div class="word">Скрытный - Скрытый</div>
+    <div class="word">Словарный - Словесный</div>
+    <div class="word">Сопротивление - Сопротивляемость</div>
+    <div class="word">Соседний - Соседский</div>
+    <div class="word">Сравнимый - Сравнительный</div>
+    <div class="word">Сценический - Сценичный</div>
+    <div class="word">Технический - Техничный</div>
+    <div class="word">Удачливый - Удачный</div>
+    <div class="word">Униженный - Унизительный</div>
+    <div class="word">Фактический - Фактичный</div>
+    <div class="word">Хищнический - Хищный</div>
+    <div class="word">Царский - Царственный - Царствующий</div>
+    <div class="word">Целый - Цельный - Целостный</div>
+    <div class="word">Экономический - Экономичный - Экономный</div>
+    <div class="word">Эстетический - Эстетичный</div>
+    <div class="word">Этический - Этичный</div>
+    <div class="word">Эффективный - Эффектный</div>
+    <div class="word">Эффективность - Эффектность</div>
+</div>
+</body>
+</html>

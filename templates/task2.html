@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тренажёр паронимов</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 400px;
+            margin: 0 auto;
+            transition: transform 0.3s;
+        }
+        .container:hover {
+            transform: scale(1.02); /* Увеличение при наведении */
+        }
+        h1 {
+            color: #008000;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background: linear-gradient(90deg, #4CAF50, #008000);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        input[type="submit"]:hover {
+            background: linear-gradient(90deg, #45a049, #006400);
+            transform: translateY(-2px);
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+        .score {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="score">Очки: {{ score }}</div>
+        <h1>Введите пароним к слову</h1>
+        <h2>{{ session['list_ans'][0] }}</h2>
+        <form action="" method="GET">
+            <input type="text" id="{{ i }}" name="answer" placeholder="Ваш ответ" required>
+            <input type="submit" value="Ответить">
+        </form>
+        <a href="{{ url_for('home') }}">Закончить</a>
+    </div>
+</body>
+</html>
