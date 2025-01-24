@@ -62,7 +62,7 @@ def words(username):
     result = loads(cursor.execute("""SELECT statistika FROM Users WHERE Username = ?""", (username,)).fetchone()[0])
     for i in range(len(result)):
         a, b = result[i]
-        result[i] = (a + randint(-3, 3), b + randint(-3, 3), i)
+        result[i] = (a + randint(-1, 1), b, i)
     result.sort()
     l = []
     for i in range(10):
@@ -77,7 +77,7 @@ def parons(username):
     result = loads(cursor.execute("""SELECT paron_st FROM Users WHERE Username = ?""", (username,)).fetchone()[0])
     for i in range(len(result)):
         a, b = result[i]
-        result[i] = (a + randint(-3, 3), b + randint(-3, 3), i)
+        result[i] = (a + randint(-1, 1), b, i)
     result.sort()
     l = []
     for i in range(10):
@@ -143,8 +143,8 @@ def register():
         if len(result) == 0 and username:
             if password == password_again and username:
                 cursor.execute(
-                    """INSERT INTO Users(Username, Password, all_task1, accept_task1, statistika, paron_st) VALUES(?, ?, ?, ?, ?, ?)""",
-                    (username, password_hash(password), 0, 0, dumps(base_stat), dumps(base_stat2)))
+                    """INSERT INTO Users(Username, Password, all_task1, accept_task1, statistika, paron_st, all_task2, accept_task2) VALUES(?, ?, ?, ?, ?, ?)""",
+                    (username, password_hash(password), 0, 0, dumps(base_stat), dumps(base_stat2), 0, 0))
                 conn.commit()
                 conn.close()
                 return redirect(url_for('login'))
@@ -223,7 +223,7 @@ def result2():
     all_task2 = result[1]
     accept_task2 = accept_task2 + session['score']
     all_task2 += 10
-    if all_task2 >= 110:
+    if all_task2 >= 200:
         all_task2 //= 2
         accept_task2 //= 2
     cursor.execute("""UPDATE Users SET accept_task2 = ?, all_task2 = ? WHERE Username = ?""",
@@ -259,7 +259,7 @@ def result():
     all_task1 = result[1]
     accept_task1 = accept_task1 + session['score']
     all_task1 += 10
-    if all_task1 >= 110:
+    if all_task1 >= 120:
         all_task1 //= 2
         accept_task1 //= 2
     cursor.execute("""UPDATE Users SET accept_task1 = ?, all_task1 = ? WHERE Username = ?""",
@@ -305,7 +305,6 @@ def logout():
 def profile():
     if not session['username']:
         return redirect(url_for('login'))
-    conn = connect("data_base.db")
     username = session['username']
     conn = connect('data_base.db')
     cursor = conn.cursor()
@@ -317,7 +316,7 @@ def profile():
     all_task2 = result[1]
     conn.commit()
     conn.close()
-    return render_template('profile.html', score=int(accept_task1 * 100 / max(all_task1, 1)), score2=int(accept_task2 * 100 / max(all_task2, 1)))
+    return render_template('profile.html', score=int(accept_task1 * 100 / max(all_task1, 1)), score2=int(int(accept_task2) * 100 / max(all_task2, 1)))
 
 
 @app.route('/teoriy')

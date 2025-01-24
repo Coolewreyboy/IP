@@ -13,17 +13,17 @@
             text-align: center;
             margin: 0;
             padding: 20px;
-            background-image: url('https://www.transparenttextures.com/patterns/white-paper.png'); /* Фоновое изображение */
+            background-image: url('https://www.transparenttextures.com/patterns/white-paper.png');
         }
         .container {
-            background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон для контейнера */
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Увеличенная тень */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
             padding: 30px;
             max-width: 400px;
-            margin: 20px auto; /* Центрирование контейнера */
-            position: relative; /* Для псевдоэлементов */
-            overflow: hidden; /* Скрытие псевдоэлементов, выходящих за пределы контейнера */
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
         }
         .container::before {
             content: '';
@@ -32,42 +32,42 @@
             left: -20px;
             right: -20px;
             bottom: -20px;
-            background: rgba(76, 175, 80, 0.1); /* Светлый зеленый градиент */
-            border-radius: 12px; /* Закругленные углы */
-            z-index: 0; /* Псевдоэлемент под содержимым */
+            background: rgba(76, 175, 80, 0.1);
+            border-radius: 12px;
+            z-index: 0;
         }
         h1 {
-            color: #4CAF50; /* Зеленый заголовок */
+            color: #4CAF50;
             margin-bottom: 20px;
-            font-size: 2.5em; /* Увеличенный размер заголовка */
-            position: relative; /* Для псевдоэлементов */
-            z-index: 1; /* Заголовок над псевдоэлементом */
+            font-size: 2.5em;
+            position: relative;
+            z-index: 1;
         }
         .user-info {
-            font-size: 20px; /* Увеличенный размер шрифта для информации о пользователе */
-            margin: 15px 0; /* Отступы для информации о пользователе */
-            color: #2e7d32; /* Темно-зеленый цвет текста */
-            position: relative; /* Для псевдоэлементов */
-            z-index: 1; /* Информация о пользователе над псевдоэлементом */
+            font-size: 20px;
+            margin: 15px 0;
+            color: #2e7d32;
+            position: relative;
+            z-index: 1;
         }
         a {
             display: block;
             margin: 15px 0;
             text-decoration: none;
-            color: #2e7d32; /* Темно-зеленый цвет ссылок */
-            transition: color 0.3s, transform 0.3s; /* Плавный эффект при наведении */
-            font-size: 20px; /* Увеличенный размер шрифта для ссылок */
-            padding: 10px; /* Отступы для ссылок */
-            border-radius: 5px; /* Закругленные углы */
-            background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для ссылок */
-            position: relative; /* Для псевдоэлементов */
-            z-index: 1; /* Ссылки над псевдоэлементом */
+            color: #2e7d32;
+            transition: color 0.3s, transform 0.3s;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
         }
         a:hover {
-            color: #1b5e20; /* Более темный зеленый при наведении */
-            transform: scale(1.05); /* Увеличение ссылки при наведении */
-            background-color: rgba(255, 255, 255, 1); /* Полный белый фон при наведении */
+            color: #1b5e20;
+            transform: scale(1.05);
+            background-color: rgba(255, 255, 255, 1);
         }
     </style>
 </head>
