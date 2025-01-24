@@ -91,6 +91,8 @@ def paron_ans(s):
     s = [i.capitalize() for i in s.split(' - ')]
     shuffle(s)
     return s
+
+
 @app.route('/')
 @app.route('/login', methods=['GET'])
 def login():
@@ -101,9 +103,9 @@ def login():
         cursor = conn.cursor()
         if not username or not password:
             return render_template('login.html', message='')
+        username = username.strip()
         result = cursor.execute("""SELECT * FROM Users WHERE Username = ? AND Password = ?""",
                                 (username, password_hash(password))).fetchone()
-        username = username.strip()
         check_username = bool(cursor.execute("""SELECT * FROM Users WHERE Username = ?""", (username,)).fetchone())
         conn.commit()
         conn.close()
@@ -221,6 +223,9 @@ def result2():
     all_task2 = result[1]
     accept_task2 = accept_task2 + session['score']
     all_task2 += 10
+    if all_task2 >= 110:
+        all_task2 //= 2
+        accept_task2 //= 2
     cursor.execute("""UPDATE Users SET accept_task2 = ?, all_task2 = ? WHERE Username = ?""",
                             (accept_task2, all_task2, username)).fetchone()
     result = loads(cursor.execute("""SELECT paron_st FROM Users WHERE Username = ?""", (username,)).fetchone()[0])
@@ -254,6 +259,9 @@ def result():
     all_task1 = result[1]
     accept_task1 = accept_task1 + session['score']
     all_task1 += 10
+    if all_task1 >= 110:
+        all_task1 //= 2
+        accept_task1 //= 2
     cursor.execute("""UPDATE Users SET accept_task1 = ?, all_task1 = ? WHERE Username = ?""",
                             (accept_task1, all_task1, username)).fetchone()
     result = loads(cursor.execute("""SELECT statistika FROM Users WHERE Username = ?""", (username,)).fetchone()[0])
@@ -335,6 +343,16 @@ def trophy():
 @app.route('/paron_teoriy')
 def paron_teoriy():
     return render_template('paron_teoriy.html')
+
+
+@app.route('/save')
+def save():
+    conn = connect('data_base.db')
+    cursor = conn.cursor()
+    result = cursor.execute("""SELECT * FROM Users""").fetchall()
+    conn.commit()
+    conn.close()
+    return render_template('save.html', result=result)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8080)

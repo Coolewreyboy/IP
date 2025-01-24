@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="{{ url_for('home') }}" class="back-link">Главная</a>
+<br>
+{% for (username, password, id, ac1, al1, stat, parons, al2, ac2) in result %}
+        <a>{{username}} {{password}} {{id}} {{ac1}} {{al1}} {{stat}} {{parons}} {{al2}} {{ac2}} </a><br>
+{% endfor %}
+</body>
+</html>

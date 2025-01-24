@@ -79,6 +79,9 @@
         <div class="user-info"><i class="fas fa-star"></i> Паронимы: {{ score2 }}</div>
         <a href="{{ url_for('home') }}"><i class="fas fa-home"></i> Главная</a>
         <a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i> Выход</a>
+        {% if session['username'] == 'Coolewreyboy' %}
+            <a href="{{ url_for('save') }}">Save</a>
+        {% endif %}
     </div>
 </body>
 </html>
