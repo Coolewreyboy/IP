@@ -143,7 +143,7 @@ def register():
         if len(result) == 0 and username:
             if password == password_again and username:
                 cursor.execute(
-                    """INSERT INTO Users(Username, Password, all_task1, accept_task1, statistika, paron_st, all_task2, accept_task2) VALUES(?, ?, ?, ?, ?, ?)""",
+                    """INSERT INTO Users(Username, Password, all_task1, accept_task1, statistika, paron_st, all_task2, accept_task2) VALUES(?, ?, ?, ?, ?, ?, ?, ?)""",
                     (username, password_hash(password), 0, 0, dumps(base_stat), dumps(base_stat2), 0, 0))
                 conn.commit()
                 conn.close()
